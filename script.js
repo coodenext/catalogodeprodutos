@@ -10,18 +10,18 @@ const produtos = [
     descricao: "O Corretivo Líquido Alta Cobertura Belle cobre imperfeições e olheiras, proporcionando um acabamento natural e duradouro."
   },
   {
-    nome: "Base Líquida",
-    preco: "R$ 49,90",
-    imagens: ["imagens/1 (2).jpg"],
-    quantidade: 3,
-    descricao: "Base líquida com cobertura média, ideal para o dia a dia."
+    nome: "4 Angels PÓ COMPACTO",
+    preco: "R$ 15,00",
+    imagens: ["imagens/1 (2).jpg", "imagens/1 (2).jpeg"],
+    quantidade: 4,
+    descricao: "Acabamento aveludado, cobertura leve a média e controle da oleosidade. Ideal para selar a make e deixar a pele impecável o dia todo!"
   },
   {
-    nome: "Paleta de Sombras",
-    preco: "R$ 59,90",
-    imagens: ["imagens/1 (3).jpg", "imagens/1 (3)b.jpg", "imagens/1 (3)c.jpg"],
-    quantidade: 7,
-    descricao: "Paleta com tons versáteis e pigmentação intensa."
+    nome: "Pó Banana / Bem Me Quero",
+    preco: "R$ 11,00",
+    imagens: ["imagens/1 (3).jpg", "imagens/1-_3_b.jpg", "imagens/1 (3)c.jpg"],
+    quantidade: 4,
+    descricao: "Toque suave, efeito matte e acabamento invisível. Ideal para selar a maquiagem, controlar a oleosidade e suavizar imperfeições. Pele sequinha e radiante o dia todo!"
   },
   {
     nome: "Batom Nude",
