@@ -117,3 +117,29 @@ body {
     cursor: pointer;
     padding: 0 20px;
   }  
+
+  .rodape-uol {
+    background-color: #f5f5f5;
+    color: #999;
+    font-size: 14px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .logo-uol {
+    width: 100px;
+    display: block;
+    margin: 0 auto;        /* centraliza a logo */
+    padding: 0;            /* remove qualquer padding */
+    margin-bottom: -20px;   /* aproxima a logo do texto abaixo */
+  }
+  
+  .footer-text {
+    margin-top: 0;         /* garante que o texto não tenha espaço extra acima */
+    padding-top: 0;
+  }  
+  
+  .rodape-uol a {
+    color: #999;
+    text-decoration: underline;
+  }  
