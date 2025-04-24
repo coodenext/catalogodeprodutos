@@ -26,6 +26,12 @@ const produtos = [
       imagens: ["imagens/1 (4).jpg"],
       quantidade: 2
     },
+    {
+        nome: "Batom Nude",
+        preco: "R$ 32,90",
+        imagens: ["imagens/1 (4).jpg"],
+        quantidade: 2
+      },
   ];  
 
   function renderizarProdutos(lista) {
