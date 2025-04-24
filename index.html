@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo de Maquiagem</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div id="lightbox" class="lightbox" onclick="fecharLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" />
+        <div class="setas">
+          <span class="anterior" onclick="mudarImagem(-1, event)">&#10094;</span>
+          <span class="proxima" onclick="mudarImagem(1, event)">&#10095;</span>
+        </div>
+      </div>      
+
+  <header>
+    <img src="/logomarca.png" alt="Logo da Loja" class="logo" />
+    <h1>Catálogo de Produtos</h1>
+  </header>
+
+  <main id="catalogo" class="catalogo-produtos">
+    <!-- Produtos carregados via script.js -->
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
