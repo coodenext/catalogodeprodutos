@@ -245,3 +245,21 @@ function mudarImagem(direcao, event) {
   imagemAtual = (imagemAtual + direcao + total) % total;
   document.getElementById("lightbox-img").src = produtos[produtoAtual].imagens[imagemAtual];
 }
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.banner-slide');
+const totalSlides = slides.length;
+
+function mudarSlide() {
+  // Ocultar o slide atual
+  slides[currentSlide].style.display = 'none';
+
+  // Avançar para o próximo slide
+  currentSlide = (currentSlide + 1) % totalSlides;
+
+  // Exibir o novo slide
+  slides[currentSlide].style.display = 'block';
+}
+
+// Chama a função mudarSlide a cada 3 segundos
+setInterval(mudarSlide, 3000);
