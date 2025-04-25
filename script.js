@@ -184,8 +184,8 @@ function renderizarProdutos(lista) {
   container.innerHTML = "";
 
   lista.forEach((produto, index) => {
-    const linkImagem = `${window.location.origin}/${produto.imagens[0]}`;
-    const mensagem = encodeURIComponent(`Olá! Tenho interesse no produto *${produto.nome}* que custa ${produto.preco}. Veja a imagem: ${linkImagem}`);
+    const mensagem = encodeURIComponent(`Olá! Tenho interesse no produto *${produto.nome}* que custa ${produto.preco}.`);
+
     const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
 
     const card = document.createElement("div");
