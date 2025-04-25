@@ -194,3 +194,62 @@ body {
     cursor: pointer;
     padding: 0 20px;
 }
+
+.produto.esgotado {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .produto.esgotado img {
+    filter: grayscale(100%);
+  }
+
+  /* CSS para estilizar o campo de busca */
+.campo-busca {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  #buscarProduto {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  #buscarProduto:focus {
+    outline: none;
+    border-color: #007BFF;
+  }
+  
+  /* Estilizando o título */
+.titulo-catalogo {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilizando o campo de busca */
+  .campo-busca {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    margin-bottom: 30px; /* Espaço abaixo do campo de busca */
+  }
+  
+  #buscarProduto {
+    width: 50%; /* Tamanho do campo de busca */
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* Centraliza o texto dentro do campo */
+  }
+  
+  #buscarProduto:focus {
+    outline: none;
+    border-color: #007BFF;
+  }  

@@ -179,29 +179,45 @@ const produtos = [
   },
 ];
 
-function renderizarProdutos(lista) {
-  const container = document.getElementById("catalogo");
-  container.innerHTML = "";
+function filtrarProdutos() {
+    const filtro = document.getElementById("buscarProduto").value.toLowerCase(); // Obtém o valor digitado no campo de busca e converte para minúsculas
+    const produtosFiltrados = produtos.filter(produto => 
+      produto.nome.toLowerCase().includes(filtro) // Filtra produtos cujo nome contém o texto digitado
+    );
+    renderizarProdutos(produtosFiltrados); // Chama a função que renderiza os produtos filtrados
+  }
+  
+  function renderizarProdutos(lista) {
+    const container = document.getElementById("catalogo");
+    container.innerHTML = ""; // Limpa o conteúdo anterior
+    
+    if (lista.length === 0) {
+      container.innerHTML = "<p>Nenhum produto encontrado.</p>"; // Exibe mensagem caso nenhum produto seja encontrado
+    } else {
+      lista.forEach((produto, index) => {
+        const esgotado = produto.quantidade <= 0;
+        const linkImagem = `${window.location.origin}/${produto.imagens[0]}`;
+        const mensagem = encodeURIComponent(`Olá! Tenho interesse no produto *${produto.nome}* que custa ${produto.preco}.`);
+        const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+    
+        const card = document.createElement("div");
+        card.className = `produto${esgotado ? " esgotado" : ""}`;
+        card.innerHTML = `
+          <img src="${produto.imagens[0]}" alt="${produto.nome}" onclick="abrirLightbox(${index}, 0)" />
+          <div class="produto-info">
+            <h3>${produto.nome}</h3>
+            <p>${produto.preco}</p>
+            <p><strong>Disponível:</strong> ${produto.quantidade} unidades</p>
+            ${esgotado
+              ? `<p style="color: red; font-weight: bold;">Produto Esgotado</p>`
+              : `<a href="${linkWhatsApp}" target="_blank" class="botao-whatsapp">Comprar via WhatsApp</a>`}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+  }  
 
-  lista.forEach((produto, index) => {
-    const mensagem = encodeURIComponent(`Olá! Tenho interesse no produto *${produto.nome}* que custa ${produto.preco}.`);
-
-    const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
-
-    const card = document.createElement("div");
-    card.className = "produto";
-    card.innerHTML = `
-      <img src="${produto.imagens[0]}" alt="${produto.nome}" onclick="abrirLightbox(${index}, 0)" />
-      <div class="produto-info">
-        <h3>${produto.nome}</h3>
-        <p>${produto.preco}</p>
-        <p><strong>Disponível:</strong> ${produto.quantidade} unidades</p>
-        <a href="${linkWhatsApp}" target="_blank" class="botao-whatsapp">Comprar via WhatsApp</a>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}
 
 window.onload = () => renderizarProdutos(produtos);
 
