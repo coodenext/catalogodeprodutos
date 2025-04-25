@@ -173,10 +173,10 @@ const produtos = [
   {
     nome: "Gloss - Febella",
     preco: "R$ 19,00",
-    imagens: ["imagens/1 (7).jpg", "imagens/1 (1)b.jpeg"],
+    imagens: ["imagens/1 (7).jpg"],
     quantidade: 5,
     descricao: "Brilho intenso, textura confortável e efeito volumoso. Realce seus lábios com um toque de cor e hidratação na medida certa!"
-  },
+  }
 ];
 
 function filtrarProdutos() {
@@ -190,7 +190,7 @@ function filtrarProdutos() {
   function renderizarProdutos(lista) {
     const container = document.getElementById("catalogo");
     container.innerHTML = ""; // Limpa o conteúdo anterior
-    
+
     if (lista.length === 0) {
       container.innerHTML = "<p>Nenhum produto encontrado.</p>"; // Exibe mensagem caso nenhum produto seja encontrado
     } else {
@@ -263,3 +263,4 @@ function mudarSlide() {
 
 // Chama a função mudarSlide a cada 3 segundos
 setInterval(mudarSlide, 5000);
+
