@@ -73,7 +73,7 @@ const produtos = [
     descricao: "Limpeza suave com cheirinho doce e envolvente de morango. Espuma cremosa que hidrata e perfuma a pele, deixando-a macia e fresquinha o dia todo!"
   },
   {
-    nome: "Kit 13 Pincéis Profissionai",
+    nome: "Kit 13 Pincéis Profissionais",
     preco: "R$ 22,00",
     imagens: ["imagens/1 (20).jpg",],
     quantidade: 2,
@@ -262,4 +262,4 @@ function mudarSlide() {
 }
 
 // Chama a função mudarSlide a cada 3 segundos
-setInterval(mudarSlide, 3000);
+setInterval(mudarSlide, 5000);
