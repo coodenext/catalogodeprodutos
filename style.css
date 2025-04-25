@@ -12,7 +12,7 @@ body {
   }
   
   .logo {
-    width: 120px;
+    width: 200px;
     height: auto;
     margin-bottom: 1px;
   }
@@ -204,6 +204,7 @@ body {
     filter: grayscale(100%);
   }
 
+
   /* CSS para estilizar o campo de busca */
 .campo-busca {
     margin: 20px 0;
@@ -233,23 +234,41 @@ body {
     font-family: Arial, sans-serif;
   }
   
-  /* Estilizando o campo de busca */
-  .campo-busca {
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo */
-    margin-bottom: 30px; /* Espaço abaixo do campo de busca */
-  }
-  
-  #buscarProduto {
-    width: 50%; /* Tamanho do campo de busca */
-    padding: 5px;
-    font-size: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center; /* Centraliza o texto dentro do campo */
-  }
-  
   #buscarProduto:focus {
     outline: none;
     border-color: #007BFF;
   }  
+
+  /* Animação para o hover do botão de busca */
+#buscarProduto {
+    width: 50%;
+    padding: 8px;
+    font-size: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    text-align: center; /* Centraliza o texto dentro do campo */
+  }
+  
+  /* Efeito ao passar o mouse sobre o campo de busca */
+  #buscarProduto:hover {
+    border-color: #d6336c; /* Mudar cor da borda ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento de tamanho */
+  }
+  
+  /* Efeito ao clicar no campo de busca */
+  #buscarProduto:active {
+    background-color: #ffe2ec; /* Mudança de cor no clique */
+    transform: scale(0.98); /* Pequeno "efeito de apertar" */
+  }
+  
+  /* Estilo para o campo de busca */
+  .campo-busca {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    margin-bottom: 30px; /* Espaço abaixo do campo de busca */
+    margin: 20px 0;
+    text-align: center;
+  }
+  
