@@ -75,20 +75,42 @@ body {
     text-align: center;
   }
   
-  #buscarProduto:hover {
-    border-color: #d6336c;
-    transform: scale(1.05);
+  /* Centralizar o container do input e botão */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
   }
   
-  #buscarProduto:focus {
+  /* Estilo para o input de busca */
+  #buscarProduto {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
     outline: none;
-    border-color: #007BFF;
   }
   
-  #buscarProduto:active {
-    background-color: #ffe2ec;
-    transform: scale(0.98);
+  /* Estilo para o botão de busca */
+  #btnBuscar {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
+  
+  /* Efeito ao passar o mouse sobre o botão */
+  #btnBuscar:hover {
+    background-color: #45a049;
+  }
+  
   
   .catalogo-produtos {
     display: grid;

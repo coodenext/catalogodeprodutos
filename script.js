@@ -180,10 +180,11 @@ const produtos = [
 ];
 
 function filtrarProdutos() {
-    const filtro = document.getElementById("buscarProduto").value.toLowerCase(); // Obtém o valor digitado no campo de busca e converte para minúsculas
+    const filtro = document.getElementById("buscarProduto").value.toLowerCase(); // Correção
     const produtosFiltrados = produtos.filter(produto => 
       produto.nome.toLowerCase().includes(filtro) // Filtra produtos cujo nome contém o texto digitado
     );
+
     renderizarProdutos(produtosFiltrados); // Chama a função que renderiza os produtos filtrados
   }
   
@@ -264,3 +265,33 @@ function mudarSlide() {
 // Chama a função mudarSlide a cada 3 segundos
 setInterval(mudarSlide, 5000);
 
+function gerarEstrelas(avaliacao, index) {
+    let estrelasHTML = "";
+    for (let i = 1; i <= 5; i++) {
+      estrelasHTML += `<span onclick="avaliarProduto(${index}, ${i})" style="cursor:pointer; color: ${i <= avaliacao ? '#FFD700' : '#ccc'};">★</span>`;
+    }
+    return estrelasHTML;
+  }
+  
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const catalogo = document.getElementById("catalogo");
+    const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+  
+    if (produtos.length === 0) {
+      catalogo.innerHTML = "<p style='text-align:center;'>Nenhum produto cadastrado ainda.</p>";
+      return;
+    }
+  
+    produtos.forEach((produto, index) => {
+      const div = document.createElement("div");
+      div.className = "produto-item";
+      div.innerHTML = `
+        <img src="${produto.imagem}" alt="${produto.nome}" onclick="abrirLightbox(${index})" />
+        <h3>${produto.nome}</h3>
+        <p class="preco">R$ ${produto.preco}</p>
+        <p>${produto.descricao}</p>
+      `;
+      catalogo.appendChild(div);
+    });
+  });
