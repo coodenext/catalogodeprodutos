@@ -295,3 +295,19 @@ function gerarEstrelas(avaliacao, index) {
       catalogo.appendChild(div);
     });
   });
+
+  // Mostrar o botão quando o usuário rolar 100px
+window.onscroll = function() {
+    const btn = document.getElementById("btnTopo");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+  
+  // Função para rolar suavemente ao topo
+  function voltarAoTopo() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
