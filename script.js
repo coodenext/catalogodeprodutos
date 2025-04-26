@@ -19,7 +19,7 @@ const produtos = [
   {
     nome: "Pó Banana / Bem Me Quero",
     preco: "R$ 11,00",
-    imagens: ["imagens/1 (3).jpg", "imagens/1-_3_b.jpg", "imagens/1 (3)c.jpg"],
+    imagens: ["imagens/1 (3).jpg", "imagens/1-_3_b.jpg"],
     quantidade: 4,
     descricao: "Toque suave, efeito matte e acabamento invisível. Ideal para selar a maquiagem, controlar a oleosidade e suavizar imperfeições. Pele sequinha e radiante o dia todo!"
   },

@@ -14,7 +14,7 @@ body {
   .logo {
     width: 200px;
     height: auto;
-    margin-bottom: 1px;
+    margin-bottom: -40px;
   }
   
   header h1 {
