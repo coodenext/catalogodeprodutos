@@ -316,9 +316,20 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, transform 0.3s;
   }
-  
+   
+  /* Efeito hover */
   #btnTopo:hover {
     background-color: #45a049;
     transform: scale(1.1);
+  }
+  
+  /* Otimização para telas pequenas */
+  @media (max-width: 600px) {
+    #btnTopo {
+      bottom: 20px;
+      right: 20px;
+      padding: 12px;
+      font-size: 20px;
+    }
   }
   
