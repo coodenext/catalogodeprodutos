@@ -1,335 +1,361 @@
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #fff5f8;
-    color: #333;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff5f8;
+  color: #333;
+}
+
+header {
+  background-color: #ffe2ec;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: -45px;
+}
+
+header h1 {
+  margin: 0;
+  color: #d6336c;
+  font-size: 24px;
+}
+
+.banner-rotativo {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.banner-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease;
+}
+
+.banner-rotativo .banner-slide:first-child {
+  display: block;
+}
+
+.titulo-catalogo {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.campo-busca {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0 30px 0;
+}
+
+.campo-busca input {
+  width: 50%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Centralizar o container do input e botão */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Estilo para o input de busca */
+#buscarProduto {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  outline: none;
+}
+
+/* Estilo para o botão de busca */
+#btnBuscar {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+#btnBuscar:hover {
+  background-color: #45a049;
+}
+
+
+.catalogo-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.produto {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+}
+
+.produto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.produto-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.produto-info h3 {
+  margin: 10px 0 5px;
+}
+
+.produto-info p {
+  color: #d6336c;
+  font-weight: bold;
+}
+
+.botao-whatsapp {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.botao-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+.produto.esgotado {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.produto.esgotado img {
+  filter: grayscale(100%);
+}
+
+.produto.esgotado::before {
+  content: "ESGOTADO";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.85);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #fff;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 70%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #fff;
+}
+
+#lightbox-descricao {
+  color: white;
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.setas {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.setas span {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.setas span:focus {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.rodape-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-uol {
+  width: 90px;
+  margin-bottom: 1px;
+}
+
+.texto-rodape h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #555;
+}
+
+.slogan {
+  margin: 4px 0 10px 0;
+  font-size: 14px;
+  color: #777;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .banner-rotativo {
+    height: 180px;
   }
-  
-  header {
-    background-color: #ffe2ec;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .logo {
-    width: 200px;
-    height: auto;
-    margin-bottom: -45px;
-  }
-  
-  header h1 {
-    margin: 0;
-    color: #d6336c;
+  .titulo-catalogo {
     font-size: 24px;
   }
-  
-  .banner-rotativo {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    margin-bottom: 0;
-    padding: 0;
-  }
-  
-  .banner-slide {
-    display: none;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .banner-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 1s ease;
-  }
-  
-  .banner-rotativo .banner-slide:first-child {
-    display: block;
-  }
-  
-  .titulo-catalogo {
-    text-align: center;
-    font-size: 32px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .campo-busca {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 20px 0 30px 0;
-  }
-  
   .campo-busca input {
-    width: 50%;
-    max-width: 400px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    text-align: center;
+    width: 80%;
   }
-  
-  /* Centralizar o container do input e botão */
-.search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-  }
-  
-  /* Estilo para o input de busca */
-  #buscarProduto {
-    padding: 10px;
-    font-size: 16px;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-    outline: none;
-  }
-  
-  /* Estilo para o botão de busca */
-  #btnBuscar {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Efeito ao passar o mouse sobre o botão */
-  #btnBuscar:hover {
-    background-color: #45a049;
-  }
-  
-  
-  .catalogo-produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 30px;
-  }
-  
-  .produto {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s;
-    position: relative;
-  }
-  
-  .produto:hover {
-    transform: translateY(-5px);
-  }
-  
-  .produto img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .produto-info {
-    padding: 15px;
-    text-align: center;
-  }
-  
-  .produto-info h3 {
-    margin: 10px 0 5px;
-  }
-  
-  .produto-info p {
-    color: #d6336c;
-    font-weight: bold;
-  }
-  
-  .botao-whatsapp {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 16px;
-    background-color: #25D366;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  
-  .botao-whatsapp:hover {
-    background-color: #1ebe5d;
-  }
-  
-  .produto.esgotado {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-  
-  .produto.esgotado img {
-    filter: grayscale(100%);
-  }
-  
-  .produto.esgotado::before {
-    content: "ESGOTADO";
-    position: absolute;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 10px;
-    top: 10px;
-    left: 10px;
-    font-size: 12px;
-    border-radius: 4px;
-  }
-  
-  .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.85);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #fff;
-  }
-  
-  #lightbox-img {
-    max-width: 90%;
-    max-height: 70%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #fff;
-  }
-  
-  #lightbox-descricao {
-    color: white;
-    margin-top: 20px;
-    font-size: 16px;
-    text-align: center;
-    max-width: 90%;
-  }
-  
-  .lightbox .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .setas {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    z-index: 10;
-  }
-  
-  .setas span {
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-    padding: 0 20px;
-  }
-  
-  .setas span:focus {
-    outline: 2px solid #fff;
-    outline-offset: 4px;
-  }
-  
-  .rodape-conteudo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .logo-uol {
-    width: 90px;
-    margin-bottom: 1px;
-  }
-  
-  .texto-rodape h2 {
-    margin: 0;
-    font-size: 20px;
-    color: #555;
-  }
-  
-  .slogan {
-    margin: 4px 0 10px 0;
-    font-size: 14px;
-    color: #777;
-  }
-  
-  .footer-copy {
-    font-size: 12px;
-    color: #999;
-    margin: 0;
-  }
-  
-  @media (max-width: 600px) {
-    .banner-rotativo {
-      height: 180px;
-    }
-    .titulo-catalogo {
-      font-size: 24px;
-    }
-    .campo-busca input {
-      width: 80%;
-    }
-  }
-  
-  /* Botão Voltar ao Topo */
+}
+
+/* Botão Voltar ao Topo */
 #btnTopo {
-    display: none; /* Escondido por padrão */
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    font-size: 23px;
-    border: none;
-    outline: none;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    padding: 14px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, transform 0.3s;
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 23px;
+  border: none;
+  outline: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+ 
+/* Efeito hover */
+#btnTopo:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+/* Otimização para telas pequenas */
+@media (max-width: 600px) {
+  #btnTopo {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px;
+    font-size: 20px;
   }
-   
-  /* Efeito hover */
-  #btnTopo:hover {
-    background-color: #45a049;
-    transform: scale(1.1);
+}
+
+/* Grid responsivo para o catálogo de produtos */
+.catalogo-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Ajustes para telas maiores */
+@media (min-width: 768px) {
+  .catalogo-produtos {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Otimização para telas pequenas */
-  @media (max-width: 600px) {
-    #btnTopo {
-      bottom: 20px;
-      right: 20px;
-      padding: 12px;
-      font-size: 20px;
-    }
+}
+
+@media (min-width: 1024px) {
+  .catalogo-produtos {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
+}
+
+@media (min-width: 1440px) {
+  .catalogo-produtos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
