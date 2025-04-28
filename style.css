@@ -111,14 +111,6 @@ header h1 {
   background-color: #45a049;
 }
 
-
-.catalogo-produtos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 30px;
-}
-
 .produto {
   background-color: white;
   border-radius: 12px;
