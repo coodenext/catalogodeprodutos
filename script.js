@@ -10,14 +10,22 @@ const produtos = [
   },
   {
     id: 2,
-    nome: "Base Líquida",
-    preco: 29.99,
+    nome: "4 Angels PÓ COMPACTO",
+    preco: 15.00,
     imagens: ["imagens/1 (2).jpg", "imagens/1 (2).jpeg"],
     descricao: "Acabamento aveludado, cobertura leve a média e controle da oleosidade. Ideal para selar a make e deixar a pele impecável o dia todo!",
-    estoque: 3
+    estoque: 4
   },
   {
     id: 3,
+    nome: "Pó Banana / Bem Me Quero",
+    preco: 11.00,
+    imagens: ["imagens/1 (3).jpg"],
+    descricao: "Toque suave, efeito matte e acabamento invisível. Ideal para selar a maquiagem, controlar a oleosidade e suavizar imperfeições. Pele sequinha e radiante o dia todo!",
+    estoque: 4 // Produto fora de estoque
+  },
+  {
+    id: 4,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -25,7 +33,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 5,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -33,7 +41,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 6,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -41,7 +49,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 7,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -49,7 +57,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 8,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -57,7 +65,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 9,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -65,7 +73,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 10,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -73,7 +81,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 11,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -81,7 +89,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 12,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -89,7 +97,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 13,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -97,7 +105,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 14,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -105,7 +113,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 15,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -113,7 +121,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 16,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -121,7 +129,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 17,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -129,7 +137,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 18,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -137,7 +145,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 19,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -145,7 +153,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 20,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -153,7 +161,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 21,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -161,7 +169,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 22,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -169,7 +177,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 23,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -177,7 +185,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
+    id: 24,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -185,15 +193,7 @@ const produtos = [
     estoque: 0 // Produto fora de estoque
   },
   {
-    id: 3,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
-  },
-  {
-    id: 3,
+    id: 25,
     nome: "Máscara de Cílios",
     preco: 24.99,
     imagens: ["imagens/rimel.jpg"],
@@ -292,6 +292,13 @@ info.className = "produto-info";
 
 const nome = document.createElement("h3");
 nome.textContent = produto.nome;
+info.appendChild(nome);
+
+// Adiciona a descrição do produto logo abaixo do nome
+const descricao = document.createElement("p");
+descricao.className = "produto-descricao";
+descricao.textContent = produto.descricao;
+info.appendChild(descricao);
 
 const preco = document.createElement("p");
 preco.textContent = `R$ ${produto.preco.toFixed(2)}`;
