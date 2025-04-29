@@ -5,7 +5,7 @@ const produtos = [
     nome: "4 Angels Corretivo Líquido",
     preco: 15.00,
     imagens: ["imagens/1 (1).jpg", "imagens/1 (1)b.jpeg"], // Múltiplas imagens
-    descricao: "O Corretivo Líquido Alta Cobertura Belle cobre imperfeições e olheiras, proporcionando um acabamento natural e duradouro.",
+    descricao: "4 Angels Corretivo Líquido – Alta cobertura, toque leve e acabamento natural. Disfarça olheiras e imperfeições sem craquelar!",
     estoque: 5 // Quantidade em estoque
   },
   {
@@ -21,128 +21,128 @@ const produtos = [
     nome: "Pó Banana / Bem Me Quero",
     preco: 11.00,
     imagens: ["imagens/1 (3).jpg"],
-    descricao: "Toque suave, efeito matte e acabamento invisível. Ideal para selar a maquiagem, controlar a oleosidade e suavizar imperfeições. Pele sequinha e radiante o dia todo!",
+    descricao: "Pó Banana Bem Me Quero – Acabamento aveludado, controla a oleosidade e sela a maquiagem com leveza e perfeição!",
     estoque: 4 // Produto fora de estoque
   },
   {
     id: 4,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Blindagem Febella",
+    preco: 20.00,
+    imagens: ["imagens/1 (4).jpg", "imagens/1 (4).jpeg"],
+    descricao: "Blindagem Febella – Proteção intensa, brilho duradouro e cabelos mais fortes desde a primeira aplicação!",
+    estoque: 3 // Produto fora de estoque
   },
   {
     id: 5,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "On The Glow Blush – Fabella",
+    preco: 24.00,
+    imagens: ["imagens/1 (5).jpg"],
+    descricao: "On The Glow Blush – Fabella – Blush cremoso com efeito natural e luminoso, perfeito para um toque de cor e viço na pele!",
+    estoque: 4 // Produto fora de estoque
   },
   {
     id: 6,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Iluminador Líquido - Febella",
+    preco: 23.00,
+    imagens: ["imagens/1 (6).jpg"],
+    descricao: " Iluminador Líquido – Febella – Brilho radiante e acabamento suave para realçar os pontos altos do rosto com naturalidade!",
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 7,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Paleta de Sombras Glam 12 S / Vivai",
+    preco: 18.00,
+    imagens: ["imagens/1 (6).jpg"],
+    descricao: "Paleta de Sombras Glam 12 S – Vivai – Cores pigmentadas e versáteis, com acabamentos matte e cintilante para criar looks do dia à noite!",
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 8,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Máscara para Cílios Black ALL Day / Vivai",
+    preco: 14.00,
+    imagens: ["imagens/1 (7).jpg"],
+    descricao: "Máscara para Cílios Black ALL Day – Vivai – Volume, definição e longa duração para cílios intensamente pretos o dia todo!",
+    estoque: 3 // Produto fora de estoque
   },
   {
     id: 9,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Lápis Marrom com Apontador – VIVAI",
+    preco: 3.00,
+    imagens: ["imagens/1 (23).jpg"],
+    descricao: "Lápis Marrom com Apontador – VIVAI – Traço preciso, textura macia e praticidade com apontador acoplado! Ideal para olhos ou sobrancelhas.",
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 10,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Sabonete Líquido Moranguinho",
+    preco: 8.00,
+    imagens: ["imagens/1 (22).jpg"],
+    descricao: "Sabonete Líquido Moranguinho – Limpeza suave com cheirinho delicioso de morango e toque hidratante para a pele!",
+    estoque: 3 // Produto fora de estoque
   },
   {
     id: 11,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Kit 13 Pincéis Profissionais",
+    preco: 22.00,
+    imagens: ["imagens/1 (20).jpg"],
+    descricao: "Kit 13 Pincéis Profissionais – Conjunto completo para uma maquiagem impecável, com pincéis de alta qualidade para todos os detalhes!",
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 12,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Esponja Chanfrada",
+    preco: 5.00,
+    imagens: ["imagens/1 (19).jpg"],
+    descricao: "Esponja Chanfrada – Aplicação precisa e uniforme, perfeita para contorno e áreas difíceis de alcançar. Deixa a maquiagem impecável!",
+    estoque: 4 // Produto fora de estoque
   },
   {
     id: 13,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Primer Facial – Phállebeaut",
+    preco: 22.00,
+    imagens: ["imagens/1 (18).jpg"],
+    descricao: "Primer Facial – Phállebeaut – Preparação perfeita para a pele, controla a oleosidade e aumenta a durabilidade da maquiagem!",
+    estoque: 4 // Produto fora de estoque
   },
   {
     id: 14,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Bruma Matte – Phállebeaut",
+    preco: 17.00,
+    imagens: ["imagens/1 (17).jpg"],
+    descricao: "Bruma Matte – Phállebeaut – Fixação prolongada e acabamento matte, controlando a oleosidade e deixando a maquiagem intacta o dia todo!",
+    estoque: 3 // Produto fora de estoque
   },
   {
     id: 15,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Kit Mini Esponjinhas – Powder Puf",
+    preco: 7.00,
+    imagens: ["imagens/1 (21).jpg"],
+    descricao: "Kit Mini Esponjinhas – Powder Puf – Esponjinhas práticas e perfeitas para aplicação de pó, corretivo e retoques rápidos. Ideal para viagens!",
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 16,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
+    nome: "Sérum Vitamina C – Phállebeauty",
+    preco: 14.00,
+    imagens: ["imagens/1 (31).jpeg"],
     descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 17,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Máscara Facial Gold – Phállebeauty",
+    preco: 17.00,
+    imagens: ["imagens/1 (15).jpg"],
+    descricao: "Máscara Facial Gold – Phállebeauty – Hidratação profunda e rejuvenescimento instantâneo, com efeito luminoso e revitalizante para a pele!",
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 18,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Gel Creme Hidratante Facial – Phállebeauty",
+    preco: 20.00,
+    imagens: ["imagens/1 (14).jpg"],
+    descricao: "Gel Creme Hidratante Facial – Phállebeauty – Hidratação intensa e rápida absorção, deixando a pele macia, fresca e revitalizada!",
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 19,
