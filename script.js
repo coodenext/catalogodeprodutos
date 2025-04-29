@@ -44,7 +44,7 @@ const produtos = [
     id: 6,
     nome: "Iluminador Líquido - Febella",
     preco: 23.00,
-    imagens: ["imagens/1 (6).jpg"],
+    imagens: ["imagens/1 (6).jpg", "imagens/1 (27).jpg"],
     descricao: " Iluminador Líquido – Febella – Brilho radiante e acabamento suave para realçar os pontos altos do rosto com naturalidade!",
     estoque: 2 // Produto fora de estoque
   },
@@ -52,7 +52,7 @@ const produtos = [
     id: 7,
     nome: "Paleta de Sombras Glam 12 S / Vivai",
     preco: 18.00,
-    imagens: ["imagens/1 (6).jpg"],
+    imagens: ["imagens/1 (25).jpg"],
     descricao: "Paleta de Sombras Glam 12 S – Vivai – Cores pigmentadas e versáteis, com acabamentos matte e cintilante para criar looks do dia à noite!",
     estoque: 2 // Produto fora de estoque
   },
@@ -146,59 +146,59 @@ const produtos = [
   },
   {
     id: 19,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Espuma Facial Morango - Nelô",
+    preco: 17.00,
+    imagens: ["imagens/1 (13).jpg"],
+    descricao: "Espuma Facial Morango – Nelô – Limpeza suave com um toque doce de morango, removendo impurezas e deixando a pele macia e refrescante!",
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 20,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Gel Incolor Fix & Antifrizz – Mia Make",
+    preco: 15.00,
+    imagens: ["imagens/1 (12).jpg"],
+    descricao: "Gel Incolor Fix & Antifrizz – Mia Make – Controle de frizz e fixação sem pesar, deixando o cabelo suave, disciplinado e com brilho natural",
+    estoque: 3 // Produto fora de estoque
   },
   {
     id: 21,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Base Líquida Lua e Neve",
+    preco: 28.00,
+    imagens: ["imagens/1 (11).jpg"],
+    descricao: "Base Líquida Lua e Neve – Cobertura média e acabamento impecável, proporcionando uma pele uniforme e radiante o dia todo!",
+    estoque: 1 // Produto fora de estoque
   },
   {
     id: 22,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    nome: "Paleta de Contorno Febella – 6 Cores",
+    preco: 23.00,
+    imagens: ["imagens/1 (32).jpeg", "imagens/1 (33).jpeg"],
+    descricao: "Paleta de Contorno Febella – 6 Cores – Contorno perfeito com 6 tonalidades versáteis para modelar e iluminar o rosto de forma natural e sofisticada!",
+    estoque: 4 // Produto fora de estoque
   },
   {
     id: 23,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
+    nome: "Paleta de Blush Febella – 3 Tonalidades",
+    preco: 19.00,
+    imagens: ["imagens/1 (9).jpg"],
     descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 24,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
+    nome: "Gloss Gold Magic – Febella",
+    preco: 13.00,
+    imagens: ["imagens/1 (8).jpg"],
     descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 25,
-    nome: "Máscara de Cílios",
-    preco: 24.99,
-    imagens: ["imagens/rimel.jpg"],
+    nome: "Gloss - Febella",
+    preco: 19.00,
+    imagens: ["imagens/1 (7).jpg"],
     descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 0 // Produto fora de estoque
+    estoque: 5 // Produto fora de estoque
   },
   
 ];
