@@ -1,311 +1,539 @@
-const numeroWhatsApp = "5587992437345"; // Coloque seu número com DDD e código do país (ex: 55)
-
-// Adicionar produtos
+// script.js (corrigido com localStorage)
 const produtos = [
   {
+    id: 1,
     nome: "4 Angels Corretivo Líquido",
-    preco: "R$ 15,00",
-    imagens: ["imagens/1 (1).jpg", "imagens/1 (1)b.jpeg"],
-    quantidade: 7,
-    descricao: "O Corretivo Líquido Alta Cobertura Belle cobre imperfeições e olheiras, proporcionando um acabamento natural e duradouro."
+    preco: 15.00,
+    imagens: ["imagens/1 (1).jpg", "imagens/1 (1)b.jpeg"], // Múltiplas imagens
+    descricao: "O Corretivo Líquido Alta Cobertura Belle cobre imperfeições e olheiras, proporcionando um acabamento natural e duradouro.",
+    estoque: 5 // Quantidade em estoque
   },
   {
-    nome: "4 Angels PÓ COMPACTO",
-    preco: "R$ 15,00",
+    id: 2,
+    nome: "Base Líquida",
+    preco: 29.99,
     imagens: ["imagens/1 (2).jpg", "imagens/1 (2).jpeg"],
-    quantidade: 4,
-    descricao: "Acabamento aveludado, cobertura leve a média e controle da oleosidade. Ideal para selar a make e deixar a pele impecável o dia todo!"
+    descricao: "Acabamento aveludado, cobertura leve a média e controle da oleosidade. Ideal para selar a make e deixar a pele impecável o dia todo!",
+    estoque: 3
   },
   {
-    nome: "Pó Banana / Bem Me Quero",
-    preco: "R$ 11,00",
-    imagens: ["imagens/1 (3).jpg", "imagens/1-_3_b.jpg"],
-    quantidade: 4,
-    descricao: "Toque suave, efeito matte e acabamento invisível. Ideal para selar a maquiagem, controlar a oleosidade e suavizar imperfeições. Pele sequinha e radiante o dia todo!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Blindagem Febella",
-    preco: "R$ 20,00",
-    imagens: ["imagens/1 (4).jpg", "imagens/1 (4).jpeg"],
-    quantidade: 3,
-    descricao: "Proteção intensa, brilho radiante e fios disciplinados! A blindagem Febella sela os cabelos, reduz o frizz e prolonga o efeito da escova ou chapinha. Resultado de salão sem sair de casa!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "On The Glow Blush – Fabella",
-    preco: "R$ 24,00",
-    imagens: ["imagens/1 (5).jpg", "imagens/1 (26).jpg"],
-    quantidade: 4,
-    descricao: "Blush cremoso com efeito natural e luminoso. Textura leve, fácil de espalhar, ideal para dar aquele ar de saúde e glow instantâneo à pele!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Iluminador Líquido - Febella",
-    preco: "R$ 23,00",
-    imagens: ["imagens/1 (6).jpg", "imagens/1 (27).jpg"],
-    quantidade: 2,
-    descricao: "Textura leve, brilho sofisticado e fácil de aplicar! Realça os pontos certos do rosto com um glow radiante e natural que dura o dia inteiro."
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Paleta de Sombras Glam 12 S / Vivai",
-    preco: "R$ 18,00",
-    imagens: ["imagens/1 (25).jpg", "imagens/1 (29).jpg"],
-    quantidade: 2,
-    descricao: "12 cores incríveis com alta pigmentação e fácil esfumado. Acabamentos matte e cintilante para criar desde looks discretos até super glamourosos!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Máscara para Cílios Black ALL Day / Vivai",
-    preco: "R$ 14,00",
-    imagens: ["imagens/1 (24).jpg"],
-    quantidade: 3,
-    descricao: "Volume, definição e alongamento em uma única aplicação! Fixa o dia todo sem borrar, realçando o olhar com intensidade e durabilidade."
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Lápis Marrom com Apontador – VIVAI",
-    preco: "R$ 3,00",
-    imagens: ["imagens/1 (23).jpg"],
-    quantidade: 2,
-    descricao: "Textura macia, traço preciso e longa duração. Ideal para olhos e sobrancelhas, acompanha apontador para praticidade no dia a dia!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Sabonete Líquido Moranguinho",
-    preco: "R$ 8,00",
-    imagens: ["imagens/1 (22).jpg"],
-    quantidade: 3,
-    descricao: "Limpeza suave com cheirinho doce e envolvente de morango. Espuma cremosa que hidrata e perfuma a pele, deixando-a macia e fresquinha o dia todo!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Kit 13 Pincéis Profissionais",
-    preco: "R$ 22,00",
-    imagens: ["imagens/1 (20).jpg",],
-    quantidade: 2,
-    descricao: "Completo para olhos, rosto e acabamento! Cerdas macias, design ergonômico e resultado impecável em cada aplicação. Essencial para sua make do dia a dia ou profissional!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Esponja Chanfrada",
-    preco: "R$ 5,00",
-    imagens: ["imagens/1 (19).jpg"],
-    quantidade:4,
-    descricao: "Perfeita para aplicar base, corretivo e pó com precisão! O corte chanfrado alcança todos os cantinhos do rosto, garantindo acabamento uniforme e sem marcas."
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Primer Facial – Phállebeaut",
-    preco: "R$ 22,00",
-    imagens: ["imagens/1 (18).jpg", "imagens/1 (30).jpeg"],
-    quantidade: 4,
-    descricao: "Disfarça poros, controla a oleosidade e prepara a pele para uma make duradoura e uniforme. Textura leve, toque aveludado e efeito soft focus instantâneo!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Bruma Matte – Phállebeaut",
-    preco: "R$ 17,00",
-    imagens: ["imagens/1 (17).jpg"],
-    quantidade: 3,
-    descricao: "Finaliza, hidrata e controla a oleosidade com efeito matte. Prolonga a duração da maquiagem e deixa a pele com toque seco e sensação refrescante!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Kit Mini Esponjinhas – Powder Puf",
-    preco: "R$ 7,00",
-    imagens: ["imagens/1 (21).jpg"],
-    quantidade: 2,
-    descricao: "Macias, práticas e perfeitas para aplicar pó, selar corretivo e retoques. Ideais para áreas pequenas como abaixo dos olhos. Acabamento suave e profissional!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Sérum Vitamina C – Phállebeauty",
-    preco: "R$ 14,00",
-    imagens: ["imagens/1 (16).jpg", "imagens/1 (31).jpeg"],
-    quantidade: 2,
-    descricao: "Ilumina, hidrata e uniformiza o tom da pele. Com ação antioxidante, ajuda a prevenir sinais de envelhecimento e deixa a pele com um glow saudável e radiante!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Máscara Facial Gold – Phállebeauty",
-    preco: "R$ 17,00",
-    imagens: ["imagens/1 (15).jpg"],
-    quantidade: 2,
-    descricao: "Enriquecida com ouro e ativos nutritivos, essa máscara proporciona hidratação profunda, renovação celular e um brilho radiante. Pele revitalizada e radiante em minutos!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Gel Creme Hidratante Facial – Phállebeauty",
-    preco: "R$ 20,00",
-    imagens: ["imagens/1 (14).jpg"],
-    quantidade: 2,
-    descricao: "Hidratação intensa e leveza para a pele. Com textura gel-creme, proporciona toque suave, combate ressecamento e mantém a pele fresca e hidratada o dia todo."
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Espuma Facial Morango - Nelô",
-    preco: "R$ 17,00",
-    imagens: ["imagens/1 (13).jpg"],
-    quantidade: 2,
-    descricao: "Limpeza suave e refrescante com o delicado aroma de morango. Remove impurezas, hidrata e deixa sua pele macia e revitalizada, pronto para o dia!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Gel Incolor Fix & Antifrizz – Mia Make",
-    preco: "R$ 15,00",
-    imagens: ["imagens/1 (12).jpg"],
-    quantidade: 3,
-    descricao: "Fixação impecável e controle de frizz sem pesar. Deixa os fios disciplinados, com brilho natural e um toque suave, garantindo cabelos lindos o dia inteiro!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Base Líquida Lua e Neve",
-    preco: "R$ 28,00",
-    imagens: ["imagens/1 (11).jpg"],
-    quantidade: 1,
-    descricao: "Cobertura uniforme, textura leve e acabamento natural. Disfarça imperfeições sem pesar, garantindo uma pele radiante e confortável o dia todo!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Paleta de Contorno Febella – 6 Cores",
-    preco: "R$ 23,00",
-    imagens: ["imagens/1 (32).jpeg", "imagens/1 (33).jpeg"],
-    quantidade: 4,
-    descricao: "Contorne, ilumine e defina com perfeição! Textura macia, fácil de esfumar e tons ideais para realçar todos os tipos de pele. Resultado profissional em casa!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Paleta de Blush Febella – 3 Tonalidades",
-    preco: "R$ 19,00",
-    imagens: ["imagens/1 (9).jpg"],
-    quantidade: 2,
-    descricao: "Três cores versáteis para todos os momentos! Textura aveludada, alta pigmentação e fácil de esfumar. Ideal para criar desde looks leves até marcantes."
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Gloss Gold Magic – Febella",
-    preco: "R$ 13,00",
-    imagens: ["imagens/1 (8).jpg"],
-    quantidade: 2,
-    descricao: "Brilho dourado encantador, textura leve e efeito luminoso. Deixa os lábios radiantes com um toque mágico de glamour e sofisticação!"
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
   },
   {
-    nome: "Gloss - Febella",
-    preco: "R$ 19,00",
-    imagens: ["imagens/1 (7).jpg"],
-    quantidade: 5,
-    descricao: "Brilho intenso, textura confortável e efeito volumoso. Realce seus lábios com um toque de cor e hidratação na medida certa!"
-  }
+    id: 3,
+    nome: "Máscara de Cílios",
+    preco: 24.99,
+    imagens: ["imagens/rimel.jpg"],
+    descricao: "Máscara que alonga e dá volume aos cílios.",
+    estoque: 0 // Produto fora de estoque
+  },
+  
 ];
 
-function filtrarProdutos() {
-  const filtro = document.getElementById("buscarProduto").value.toLowerCase();
-  const produtosFiltrados = produtos.filter(produto => 
-    produto.nome.toLowerCase().includes(filtro)
-  );
 
-  renderizarProdutos(produtosFiltrados);
+const catalogo = document.getElementById("catalogo");
+
+function carregarAvaliacoes() {
+  return JSON.parse(localStorage.getItem("avaliacoes")) || {};
 }
 
-function renderizarProdutos(lista) {
-  const container = document.getElementById("catalogo");
-  container.innerHTML = "";
+function salvarAvaliacoes(avaliacoes) {
+  localStorage.setItem("avaliacoes", JSON.stringify(avaliacoes));
+}
 
-  if (lista.length === 0) {
-    container.innerHTML = "<p>Nenhum produto encontrado.</p>";
-  } else {
-    lista.forEach((produto, index) => {
-      const esgotado = produto.quantidade <= 0;
-      const linkImagem = `${window.location.origin}/${produto.imagens[0]}`;
-      const mensagem = encodeURIComponent(`Olá! Tenho interesse no produto *${produto.nome}* que custa ${produto.preco}.`);
-      const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
-
-      const card = document.createElement("div");
-      card.className = `produto${esgotado ? " esgotado" : ""}`;
-      card.innerHTML = `
-        <img src="${produto.imagens[0]}" alt="${produto.nome}" onclick="abrirLightbox(${index}, 0)" />
-        <div class="produto-info">
-          <h3>${produto.nome}</h3>
-          <p>${produto.preco}</p>
-          <p><strong>Disponível:</strong> ${produto.quantidade} unidades</p>
-          <div class="avaliacao">
-            ${gerarEstrelas(produto.avaliacao || 0, index)}
-          </div>
-          ${esgotado
-            ? `<p style="color: red; font-weight: bold;">Produto Esgotado</p>`
-            : `<a href="${linkWhatsApp}" target="_blank" class="botao-whatsapp">Comprar via WhatsApp</a>`}
-        </div>
-      `;
-      container.appendChild(card);
-    });
+function criarEstrelas(id, notaAtual) {
+  const estrelas = document.createElement("div");
+  estrelas.className = "estrelas";
+  for (let i = 1; i <= 5; i++) {
+    const estrela = document.createElement("span");
+    estrela.innerHTML = i <= notaAtual ? "★" : "☆";
+    estrela.classList.add("estrela");
+    estrela.dataset.produtoId = id;
+    estrela.dataset.valor = i;
+    estrela.style.cursor = "pointer";
+    estrela.onclick = avaliarProduto;
+    estrelas.appendChild(estrela);
   }
+  return estrelas;
 }
 
-function avaliarProduto(index, estrelas) {
-  produtos[index].avaliacao = estrelas; // Salva a avaliação no array de produtos
-  localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualiza no localStorage
-  renderizarProdutos(produtos); // Atualiza a exibição dos produtos
+function avaliarProduto(event) {
+  const produtoId = event.target.dataset.produtoId;
+  const nota = parseInt(event.target.dataset.valor);
+  const avaliacoes = carregarAvaliacoes();
+  avaliacoes[produtoId] = nota;
+  salvarAvaliacoes(avaliacoes);
+  carregarProdutos();
 }
 
+function carregarProdutos() {
+  catalogo.innerHTML = "";
+  const avaliacoes = carregarAvaliacoes();
 
-window.onload = () => renderizarProdutos(produtos);
+  produtos.forEach(produto => {
+    const div = document.createElement("div");
+    div.className = "produto";
 
-let imagemAtual = 0;
-let produtoAtual = 0;
+    // Carrossel de imagens
+    const carousel = document.createElement("div");
+    carousel.className = "carousel";
 
-function abrirLightbox(indexProduto, indexImagem) {
-  produtoAtual = indexProduto;
-  imagemAtual = indexImagem;
-  const img = document.getElementById("lightbox-img");
-  const desc = document.getElementById("lightbox-descricao");
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "carousel-images";
 
-  img.src = produtos[produtoAtual].imagens[imagemAtual];
-  desc.textContent = produtos[produtoAtual].descricao || "";
-  document.getElementById("lightbox").style.display = "flex";
+    // Inicializa o índice da imagem
+    let currentIndex = 0;
+
+    // Exibe a primeira imagem
+    const img = document.createElement("img");
+    img.src = produto.imagens[currentIndex];
+    img.alt = produto.nome;
+    img.className = "carousel-image";
+    img.onclick = () => abrirLightbox(produto);
+    imageContainer.appendChild(img);
+
+    const prevBtn = document.createElement("button");
+    prevBtn.className = "prev";
+    prevBtn.textContent = "‹";
+    prevBtn.onclick = () => {
+      currentIndex = (currentIndex - 1 + produto.imagens.length) % produto.imagens.length;
+      img.src = produto.imagens[currentIndex];
+    };
+
+    const nextBtn = document.createElement("button");
+    nextBtn.className = "next";
+    nextBtn.textContent = "›";
+    nextBtn.onclick = () => {
+      currentIndex = (currentIndex + 1) % produto.imagens.length;
+      img.src = produto.imagens[currentIndex];
+    };
+
+    carousel.appendChild(prevBtn);
+    carousel.appendChild(imageContainer);
+    carousel.appendChild(nextBtn);
+    div.appendChild(carousel);
+
+    // Informações do produto
+const info = document.createElement("div");
+info.className = "produto-info";
+
+const nome = document.createElement("h3");
+nome.textContent = produto.nome;
+
+const preco = document.createElement("p");
+preco.textContent = `R$ ${produto.preco.toFixed(2)}`;
+
+const estoque = document.createElement("p");
+estoque.textContent = `Estoque: ${produto.estoque}`;
+
+const estrelas = criarEstrelas(produto.id, avaliacoes[produto.id] || 0);
+
+    // Botão WhatsApp
+    const botao = document.createElement("a");
+    botao.className = "button";
+    if (produto.estoque <= 0) {
+      botao.textContent = "Indisponível";
+      botao.classList.add("disabled");
+      botao.removeAttribute("href"); // Remove link
+      botao.style.pointerEvents = "none"; // Impede clique
+      botao.style.opacity = "0.6"; // Visualmente mais claro
+    } else {
+    
+      botao.textContent = "Comprar no WhatsApp";
+      const mensagem = `Olá, tenho interesse neste produto!\n\nNome: ${produto.nome}\nValor: R$ ${produto.preco.toFixed(2)}`;
+      const link = `https://wa.me/5587992437345?text=${encodeURIComponent(mensagem)}`;
+      botao.href = link;
+      botao.target = "_blank";
+    }
+
+    info.appendChild(nome);
+    info.appendChild(preco);
+    info.appendChild(estoque); // Adiciona o estoque abaixo do preço
+    info.appendChild(estrelas);
+    info.appendChild(botao);
+    
+
+    div.appendChild(info);
+    catalogo.appendChild(div);
+  });
 }
+
+function abrirLightbox(produto) {
+  // Cria a estrutura do lightbox
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  
+  // Cria a imagem dentro do lightbox
+  const lightboxImg = document.createElement('img');
+  lightboxImg.src = produto.imagens[currentIndex];
+  lightboxImg.alt = produto.nome;
+
+  // Função para fechar o lightbox
+  lightbox.onclick = () => {
+    lightbox.remove();
+  };
+
+  // Adiciona a imagem no lightbox e o lightbox na página
+  lightbox.appendChild(lightboxImg);
+  document.body.appendChild(lightbox);
+}
+
 
 function fecharLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
 
-function mudarImagem(direcao, event) {
-  event.stopPropagation();
-  const total = produtos[produtoAtual].imagens.length;
-  imagemAtual = (imagemAtual + direcao + total) % total;
-  document.getElementById("lightbox-img").src = produtos[produtoAtual].imagens[imagemAtual];
+function voltarAoTopo() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-let currentSlide = 0;
-const slides = document.querySelectorAll('.banner-slide');
-const totalSlides = slides.length;
+function filtrarProdutos() {
+  const termo = document.getElementById("buscarProduto").value.toLowerCase();
 
-function mudarSlide() {
-  slides[currentSlide].style.display = 'none';
-  currentSlide = (currentSlide + 1) % totalSlides;
-  slides[currentSlide].style.display = 'block';
-}
+  // Normalizando o termo de busca (removendo acentos)
+  const termoNormalizado = termo.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-setInterval(mudarSlide, 5000);
+  const produtosFiltrados = produtos.filter(produto => {
+    // Normalizando o nome do produto (removendo acentos)
+    const nomeProdutoNormalizado = produto.nome.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    return nomeProdutoNormalizado.includes(termoNormalizado);
+  });
 
-function gerarEstrelas(avaliacao, index) {
-  let estrelasHTML = "";
-  for (let i = 1; i <= 5; i++) {
-    estrelasHTML += `<span onclick="avaliarProduto(${index}, ${i})" style="cursor:pointer; color: ${i <= avaliacao ? '#FFD700' : '#ccc'};">★</span>`;
-  }
-  return estrelasHTML;
+  catalogo.innerHTML = "";
+  const avaliacoes = carregarAvaliacoes();
+
+  produtosFiltrados.forEach(produto => {
+    const div = document.createElement("div");
+    div.className = "produto";
+
+    // Carrossel de imagens
+    const carousel = document.createElement("div");
+    carousel.className = "carousel";
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "carousel-images";
+    
+    let currentIndex = 0;
+    const img = document.createElement("img");
+    img.src = produto.imagens[currentIndex];
+    img.alt = produto.nome;
+    img.className = "carousel-image";
+    img.onclick = () => abrirLightbox(produto);
+    imageContainer.appendChild(img);
+
+    const prevBtn = document.createElement("button");
+    prevBtn.className = "prev";
+    prevBtn.textContent = "‹";
+    prevBtn.onclick = () => {
+      currentIndex = (currentIndex - 1 + produto.imagens.length) % produto.imagens.length;
+      img.src = produto.imagens[currentIndex];
+    };
+
+    const nextBtn = document.createElement("button");
+    nextBtn.className = "next";
+    nextBtn.textContent = "›";
+    nextBtn.onclick = () => {
+      currentIndex = (currentIndex + 1) % produto.imagens.length;
+      img.src = produto.imagens[currentIndex];
+    };
+
+    carousel.appendChild(prevBtn);
+    carousel.appendChild(imageContainer);
+    carousel.appendChild(nextBtn);
+    div.appendChild(carousel);
+
+    // Informações do produto
+    const info = document.createElement("div");
+    info.className = "produto-info";
+
+    const nome = document.createElement("h3");
+    nome.textContent = produto.nome;
+
+    const preco = document.createElement("p");
+    preco.textContent = `R$ ${produto.preco.toFixed(2)}`;
+
+    const estoque = document.createElement("p");
+    estoque.textContent = `Estoque: ${produto.estoque}`;
+
+    const estrelas = criarEstrelas(produto.id, avaliacoes[produto.id] || 0);
+
+    // Botão WhatsApp
+    const botao = document.createElement("a");
+    botao.className = "button";
+    if (produto.estoque <= 0) {
+      botao.textContent = "Indisponível";
+      botao.classList.add("disabled");
+      botao.removeAttribute("href"); // Remove link
+      botao.style.pointerEvents = "none"; // Impede clique
+      botao.style.opacity = "0.6"; // Visualmente mais claro
+    } else {
+      botao.textContent = "Comprar no WhatsApp";
+      const mensagem = `Olá, tenho interesse neste produto!\n\nNome: ${produto.nome}\nValor: R$ ${produto.preco.toFixed(2)}`;
+      const link = `https://wa.me/5587992437345?text=${encodeURIComponent(mensagem)}`;
+      botao.href = link;
+      botao.target = "_blank";
+    }
+
+    info.appendChild(nome);
+    info.appendChild(preco);
+    info.appendChild(estoque); // Adiciona o estoque abaixo do preço
+    info.appendChild(estrelas);
+    info.appendChild(botao);
+
+    div.appendChild(info);
+    catalogo.appendChild(div);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const catalogo = document.getElementById("catalogo");
+  carregarProdutos();
 
-  if (produtos.length === 0) {
-    catalogo.innerHTML = "<p style='text-align:center;'>Nenhum produto cadastrado ainda.</p>";
-    return;
+  // Quando digitar no campo de busca
+  document.getElementById("buscarProduto").addEventListener("input", filtrarProdutos);
+
+  // Se tiver um botão de buscar (opcional)
+  const botaoBuscar = document.getElementById("btnBuscar");
+  if (botaoBuscar) {
+    botaoBuscar.addEventListener("click", filtrarProdutos);
   }
-
-  produtos.forEach((produto, index) => {
-    const div = document.createElement("div");
-    div.className = "produto-item";
-    div.innerHTML = `
-      <img src="${produto.imagem}" alt="${produto.nome}" onclick="abrirLightbox(${index}, 0)" />
-      <h3>${produto.nome}</h3>
-      <p class="preco">R$ ${produto.preco}</p>
-      <p>${produto.descricao}</p>
-    `;
-    catalogo.appendChild(div);
-  });
 });
 
+
+let slideIndex = 0;
+  const slides = document.querySelectorAll(".banner-slide");
+
+  function mostrarSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? "block" : "none";
+    });
+  }
+
+  function changeSlide(direction) {
+    slideIndex += direction;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    mostrarSlide(slideIndex);
+  }
+
+  // Inicializa o primeiro slide corretamente
+  mostrarSlide(slideIndex);
+
+  // Opcional: rotação automática a cada 5 segundos
+  setInterval(() => changeSlide(1), 5000);
+
+
+// Função de navegação manual
+function mudarSlide(direcao) {
+  currentIndex += direcao;
+  if (currentIndex < 0) {
+    currentIndex = totalSlides - 1;
+  } else if (currentIndex >= totalSlides) {
+    currentIndex = 0;
+  }
+
+  atualizarBanner();
+}
+
+// Atualiza a posição do banner
+function atualizarBanner() {
+  const offset = -currentIndex * 100;
+  document.querySelector('.banner').style.transform = `translateX(${offset}%)`;
+}
+
+// Mostrar o botão ao rolar a página
 window.onscroll = function() {
-  const btn = document.getElementById("btnTopo");
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    btn.style.display = "block";
+  let botao = document.getElementById("btnTopo");
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    botao.style.display = "block";
   } else {
-    btn.style.display = "none";
+    botao.style.display = "none";
   }
 };
 
-function voltarAoTopo() {
+// Função para rolar até o topo
+document.getElementById("btnTopo").onclick = function() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+
+// Rolar a página para o topo ao clicar no botão
+document.getElementById("btnTopo").onclick = function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+function transicaoAutomatica() {
+  // Código da transição automática (exemplo)
+  console.log("Transição automática acionada");
 }

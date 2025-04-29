@@ -8,16 +8,6 @@
 </head>
 <body>
 
-  <div id="lightbox" class="lightbox" onclick="fecharLightbox()">
-      <span class="close">&times;</span>
-      <img id="lightbox-img" />
-      <p id="lightbox-descricao" style="color: white; margin-top: 10px; text-align: center; font-size: 16px;"></p>
-      <div class="setas">
-        <span class="anterior" onclick="mudarImagem(-1, event)">&#10094;</span>
-        <span class="proxima" onclick="mudarImagem(1, event)">&#10095;</span>
-      </div>
-  </div>
-
   <header>
     <img src="logomarca.png" alt="Logo da Loja" class="logo" />
     <h1>CATÁLOGO DE PRODUTO</h1>
@@ -25,25 +15,32 @@
 
   <div class="banner-rotativo">
     <div class="banner-slide">
-      <img src="imagens/ba1.png" alt="Promoção 1" />
+      <img src="ban1_1.png" alt="Promoção 1" />
     </div>
     <div class="banner-slide">
-      <img src="imagens/ba2.png" alt="Promoção 2" />
+      <img src="ban1_2.png" alt="Promoção 2" />
     </div>
     <div class="banner-slide">
-      <img src="imagens/ba3.png" alt="Novo Produto 1" />
+      <img src="ban1_3.png" alt="Produto 3" />
     </div>
-  </div>
+    
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+  </div> 
   
+
   <div class="search-container">
     <input type="text" id="buscarProduto" placeholder="Buscar produto..." oninput="filtrarProdutos()">
   </div>
-  
-  <button onclick="voltarAoTopo()" id="btnTopo" title="Voltar ao topo">↑</button>
+
+  <button id="btnTopo" title="Voltar ao topo">⬆</button>
+
 
   <main id="catalogo" class="catalogo-produtos">
     <!-- Produtos carregados via script.js -->
   </main>
+  
+  <div id="product-list"></div>
 
   <script src="script.js"></script>
 
