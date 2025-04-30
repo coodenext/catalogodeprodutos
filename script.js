@@ -217,18 +217,37 @@ function salvarAvaliacoes(avaliacoes) {
 function criarEstrelas(id, notaAtual) {
   const estrelas = document.createElement("div");
   estrelas.className = "estrelas";
+
   for (let i = 1; i <= 5; i++) {
     const estrela = document.createElement("span");
-    estrela.innerHTML = i <= notaAtual ? "★" : "☆";
-    estrela.classList.add("estrela");
-    estrela.dataset.produtoId = id;
-    estrela.dataset.valor = i;
+    estrela.innerHTML = "★";
     estrela.style.cursor = "pointer";
-    estrela.onclick = avaliarProduto;
+    estrela.style.fontSize = "20px";
+    estrela.style.color = i <= notaAtual ? "#FFD700" : "#ccc";
+
+    estrela.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      // Salva nova nota
+      const avaliacoes = carregarAvaliacoes();
+      avaliacoes[id] = i;
+      salvarAvaliacoes(avaliacoes);
+
+      // Atualiza visual das estrelas localmente (sem quebrar o layout)
+      const estrelasSpan = estrelas.querySelectorAll("span");
+      estrelasSpan.forEach((s, index) => {
+        s.style.color = index < i ? "#FFD700" : "#ccc";
+      });
+    });
+
     estrelas.appendChild(estrela);
   }
+
   return estrelas;
 }
+
+
 
 function avaliarProduto(event) {
   const produtoId = event.target.dataset.produtoId;

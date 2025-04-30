@@ -54,5 +54,64 @@
     </div>
   </footer>
   
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+  
+    const firebaseConfig = {
+    apiKey: "AIzaSyDm0Kg-TL7OLVAYBswVPjJt41YV_XJMdtY",
+    authDomain: "ju-make-oficial.firebaseapp.com",
+    projectId: "ju-make-oficial",
+    storageBucket: "ju-make-oficial.firebasestorage.app",
+    messagingSenderId: "525466663912",
+    appId: "1:525466663912:web:b8dbd92480245e1c32425d"
+  };
+  
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+  
+    // Agora crie as funções:
+    async function salvarAvaliacao(idProduto, nota) {
+      const docRef = doc(db, "avaliacoes", idProduto);
+      await setDoc(docRef, { nota });
+    }
+  
+    async function carregarAvaliacao(idProduto) {
+      const docRef = doc(db, "avaliacoes", idProduto);
+      const docSnap = await getDoc(docRef);
+      return docSnap.exists() ? docSnap.data().nota : 0;
+    }
+  
+    async function criarEstrelas(id) {
+      const notaAtual = await carregarAvaliacao(id);
+      const estrelas = document.createElement("div");
+      estrelas.className = "estrelas";
+  
+      for (let i = 1; i <= 5; i++) {
+        const estrela = document.createElement("span");
+        estrela.innerHTML = "&#9733;";
+        estrela.style.cursor = "pointer";
+        estrela.style.fontSize = "20px";
+        estrela.style.color = i <= notaAtual ? "#FFD700" : "#ccc";
+  
+        estrela.addEventListener("click", async () => {
+          await salvarAvaliacao(id, i);
+          location.reload(); // Recarrega para atualizar visualmente
+        });
+  
+        estrelas.appendChild(estrela);
+      }
+  
+      document.body.appendChild(estrelas); // Ou onde quiser colocar
+    }
+  
+    // Exemplo de uso:
+    criarEstrelas("produto-123");
+  
+  </script>
+  
+
+
 </body>
 </html>
