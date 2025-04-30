@@ -203,16 +203,54 @@ const produtos = [
   
 ];
 
-
 const catalogo = document.getElementById("catalogo");
 
 function carregarAvaliacoes() {
-  return JSON.parse(localStorage.getItem("avaliacoes")) || {};
+  return JSON.parse(localStorage.getItem('avaliacoes')) || {};
 }
 
 function salvarAvaliacoes(avaliacoes) {
-  localStorage.setItem("avaliacoes", JSON.stringify(avaliacoes));
+  localStorage.setItem('avaliacoes', JSON.stringify(avaliacoes));
 }
+
+function criarEstrelas(id, notaAtual = 0) {
+  const container = document.createElement('div');
+  container.classList.add('estrelas');
+  for (let i = 1; i <= 5; i++) {
+    const estrela = document.createElement('span');
+    estrela.innerHTML = i <= notaAtual ? '★' : '☆';
+    estrela.style.cursor = 'pointer';
+
+    estrela.addEventListener('click', () => {
+      const avaliacoes = carregarAvaliacoes();
+      avaliacoes[id] = i;
+      salvarAvaliacoes(avaliacoes);
+      atualizarEstrelas(container, id, i);
+    });
+
+    container.appendChild(estrela);
+  }
+  return container;
+}
+
+function atualizarEstrelas(container, id, novaNota) {
+  container.innerHTML = '';
+  for (let i = 1; i <= 5; i++) {
+    const estrela = document.createElement('span');
+    estrela.innerHTML = i <= novaNota ? '★' : '☆';
+    estrela.style.cursor = 'pointer';
+
+    estrela.addEventListener('click', () => {
+      const avaliacoes = carregarAvaliacoes();
+      avaliacoes[id] = i;
+      salvarAvaliacoes(avaliacoes);
+      atualizarEstrelas(container, id, i);
+    });
+
+    container.appendChild(estrela);
+  }
+}
+
 
 function criarEstrelas(id, notaAtual) {
   const estrelas = document.createElement("div");

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+  
   <header>
     <img src="logomarca.png" alt="Logo da Loja" class="logo" />
     <h1>CATÁLOGO DE PRODUTO</h1>
@@ -60,13 +60,13 @@
     import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
   
     const firebaseConfig = {
-    apiKey: "AIzaSyDm0Kg-TL7OLVAYBswVPjJt41YV_XJMdtY",
-    authDomain: "ju-make-oficial.firebaseapp.com",
-    projectId: "ju-make-oficial",
-    storageBucket: "ju-make-oficial.firebasestorage.app",
-    messagingSenderId: "525466663912",
-    appId: "1:525466663912:web:b8dbd92480245e1c32425d"
-  };
+      apiKey: "SUA_API_KEY",
+      authDomain: "SEU_PROJETO.firebaseapp.com",
+      projectId: "SEU_PROJETO",
+      storageBucket: "SEU_PROJETO.appspot.com",
+      messagingSenderId: "123456",
+      appId: "1:123456:web:abc123"
+    };
   
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
