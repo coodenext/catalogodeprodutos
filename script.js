@@ -257,79 +257,6 @@ function atualizarEstrelas(container, id, novaNota) {
   }
 }
 
-function carregarProdutos() {
-  catalogo.innerHTML = "";
-  const avaliacoes = carregarAvaliacoes();
-
-  produtos.forEach(produto => {
-    const div = document.createElement("div");
-    div.className = "produto";
-
-    // Carrossel de imagens
-    const carousel = document.createElement("div");
-    carousel.className = "carousel";
-
-    const imageContainer = document.createElement("div");
-    imageContainer.className = "carousel-images";
-
-    // Inicializa o índice da imagem
-    let currentIndex = 0;
-
-    // Exibe a primeira imagem
-    const img = document.createElement("img");
-    img.src = produto.imagens[currentIndex];
-    img.alt = produto.nome;
-    img.className = "produto-img";
-    imageContainer.appendChild(img);
-
-    // Função para navegar pelas imagens
-    const nextButton = document.createElement("button");
-    nextButton.textContent = "Próxima";
-    nextButton.onclick = () => {
-      currentIndex = (currentIndex + 1) % produto.imagens.length;
-      img.src = produto.imagens[currentIndex];
-    };
-
-    const prevButton = document.createElement("button");
-    prevButton.textContent = "Anterior";
-    prevButton.onclick = () => {
-      currentIndex = (currentIndex - 1 + produto.imagens.length) % produto.imagens.length;
-      img.src = produto.imagens[currentIndex];
-    };
-
-    carousel.appendChild(prevButton);
-    carousel.appendChild(imageContainer);
-    carousel.appendChild(nextButton);
-
-    // Descrição e Preço
-    const descricao = document.createElement("p");
-    descricao.textContent = produto.descricao;
-
-    const preco = document.createElement("p");
-    preco.textContent = `R$ ${produto.preco.toFixed(2)}`;
-
-    // Estrelas de avaliação
-    const estrelas = criarEstrelas(produto.id, avaliacoes[produto.id] || 0);
-
-    // Estoque
-    const estoque = document.createElement("p");
-    estoque.textContent = produto.estoque > 0 ? `Estoque: ${produto.estoque}` : "Produto fora de estoque";
-
-    div.appendChild(carousel);
-    div.appendChild(descricao);
-    div.appendChild(preco);
-    div.appendChild(estrelas);
-    div.appendChild(estoque);
-
-    catalogo.appendChild(div);
-  });
-}
-
-// Carregar produtos e avaliações ao inicializar
-document.addEventListener("DOMContentLoaded", carregarProdutos);
-
-
-
 function avaliarProduto(event) {
   const produtoId = event.target.dataset.produtoId;
   const nota = parseInt(event.target.dataset.valor);
@@ -644,3 +571,16 @@ function transicaoAutomatica() {
   // Código da transição automática (exemplo)
   console.log("Transição automática acionada");
 }
+
+window.onscroll = function() {
+  let btn = document.getElementById("btnTopo");
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
+
+document.getElementById("btnTopo").addEventListener("click", function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});

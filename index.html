@@ -30,12 +30,14 @@
     <button class="next" onclick="changeSlide(1)">&#10095;</button>
   </div>
 
-
   <div class="search-container">
     <input type="text" id="buscarProduto" placeholder="Buscar produto..." oninput="filtrarProdutos()">
   </div>
 
-  <button id="btnTopo" title="Voltar ao topo">⬆</button>
+  <footer>
+    <!-- Outros conteúdos do rodapé -->
+    <button id="btnTopo" onclick="voltarAoTopo()">⬆</button>
+  </footer>
 
 
   <main id="catalogo" class="catalogo-produtos">
@@ -56,8 +58,7 @@
       </div>
     </div>
   </footer>
-
-
+  
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
     import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";

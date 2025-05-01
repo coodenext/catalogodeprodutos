@@ -247,42 +247,44 @@ button {
 }
 
 #btnTopo {
-  position: absolute;
-  margin-top: 200px;
-}
-
-
-#btnTopo {
   display: none;
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 10px; /* Ajusta a distância do fundo */
+  right: 30px; /* Ajusta a distância da direita */
   z-index: 99;
   width: 50px;
   height: 50px;
   background-color: #4CAF50;
   color: white;
   font-size: 30px;
-  /* Aumentar o tamanho da seta*/
   border: none;
   border-radius: 30%;
   cursor: pointer;
   box-shadow: 0 7px 12px rgba(0, 0, 0, 0.3);
   text-align: center;
   display: flex;
-  /* NOVO */
   align-items: center;
-  /* NOVO */
   justify-content: center;
-  /* NOVO */
   line-height: 20px;
-  /* Mesmo valor da altura para centralizar */
+  margin: 300px auto; /* centraliza horizontalmente no rodapé */
   transition: background-color 0.3s, transform 0.3s;
 }
 
 #btnTopo:hover {
   background-color: #388e3c;
   transform: scale(1.1);
+}
+
+
+#btnTopo.show {
+  display: block;
+}
+
+/* Banner Rotativo */
+.banner-rotativo {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 
