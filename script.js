@@ -200,7 +200,7 @@ const produtos = [
     descricao: "Máscara que alonga e dá volume aos cílios.",
     estoque: 5 // Produto fora de estoque
   },
-  
+
 ];
 
 const catalogo = document.getElementById("catalogo");
@@ -216,10 +216,13 @@ function salvarAvaliacoes(avaliacoes) {
 function criarEstrelas(id, notaAtual = 0) {
   const container = document.createElement('div');
   container.classList.add('estrelas');
+
   for (let i = 1; i <= 5; i++) {
     const estrela = document.createElement('span');
     estrela.innerHTML = i <= notaAtual ? '★' : '☆';
     estrela.style.cursor = 'pointer';
+    estrela.style.fontSize = '20px';
+    estrela.style.color = i <= notaAtual ? '#FFD700' : '#ccc';
 
     estrela.addEventListener('click', () => {
       const avaliacoes = carregarAvaliacoes();
@@ -230,6 +233,7 @@ function criarEstrelas(id, notaAtual = 0) {
 
     container.appendChild(estrela);
   }
+
   return container;
 }
 
@@ -239,6 +243,8 @@ function atualizarEstrelas(container, id, novaNota) {
     const estrela = document.createElement('span');
     estrela.innerHTML = i <= novaNota ? '★' : '☆';
     estrela.style.cursor = 'pointer';
+    estrela.style.fontSize = '20px';
+    estrela.style.color = i <= novaNota ? '#FFD700' : '#ccc';
 
     estrela.addEventListener('click', () => {
       const avaliacoes = carregarAvaliacoes();
@@ -251,39 +257,76 @@ function atualizarEstrelas(container, id, novaNota) {
   }
 }
 
+function carregarProdutos() {
+  catalogo.innerHTML = "";
+  const avaliacoes = carregarAvaliacoes();
 
-function criarEstrelas(id, notaAtual) {
-  const estrelas = document.createElement("div");
-  estrelas.className = "estrelas";
+  produtos.forEach(produto => {
+    const div = document.createElement("div");
+    div.className = "produto";
 
-  for (let i = 1; i <= 5; i++) {
-    const estrela = document.createElement("span");
-    estrela.innerHTML = "★";
-    estrela.style.cursor = "pointer";
-    estrela.style.fontSize = "20px";
-    estrela.style.color = i <= notaAtual ? "#FFD700" : "#ccc";
+    // Carrossel de imagens
+    const carousel = document.createElement("div");
+    carousel.className = "carousel";
 
-    estrela.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopImmediatePropagation();
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "carousel-images";
 
-      // Salva nova nota
-      const avaliacoes = carregarAvaliacoes();
-      avaliacoes[id] = i;
-      salvarAvaliacoes(avaliacoes);
+    // Inicializa o índice da imagem
+    let currentIndex = 0;
 
-      // Atualiza visual das estrelas localmente (sem quebrar o layout)
-      const estrelasSpan = estrelas.querySelectorAll("span");
-      estrelasSpan.forEach((s, index) => {
-        s.style.color = index < i ? "#FFD700" : "#ccc";
-      });
-    });
+    // Exibe a primeira imagem
+    const img = document.createElement("img");
+    img.src = produto.imagens[currentIndex];
+    img.alt = produto.nome;
+    img.className = "produto-img";
+    imageContainer.appendChild(img);
 
-    estrelas.appendChild(estrela);
-  }
+    // Função para navegar pelas imagens
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Próxima";
+    nextButton.onclick = () => {
+      currentIndex = (currentIndex + 1) % produto.imagens.length;
+      img.src = produto.imagens[currentIndex];
+    };
 
-  return estrelas;
+    const prevButton = document.createElement("button");
+    prevButton.textContent = "Anterior";
+    prevButton.onclick = () => {
+      currentIndex = (currentIndex - 1 + produto.imagens.length) % produto.imagens.length;
+      img.src = produto.imagens[currentIndex];
+    };
+
+    carousel.appendChild(prevButton);
+    carousel.appendChild(imageContainer);
+    carousel.appendChild(nextButton);
+
+    // Descrição e Preço
+    const descricao = document.createElement("p");
+    descricao.textContent = produto.descricao;
+
+    const preco = document.createElement("p");
+    preco.textContent = `R$ ${produto.preco.toFixed(2)}`;
+
+    // Estrelas de avaliação
+    const estrelas = criarEstrelas(produto.id, avaliacoes[produto.id] || 0);
+
+    // Estoque
+    const estoque = document.createElement("p");
+    estoque.textContent = produto.estoque > 0 ? `Estoque: ${produto.estoque}` : "Produto fora de estoque";
+
+    div.appendChild(carousel);
+    div.appendChild(descricao);
+    div.appendChild(preco);
+    div.appendChild(estrelas);
+    div.appendChild(estoque);
+
+    catalogo.appendChild(div);
+  });
 }
+
+// Carregar produtos e avaliações ao inicializar
+document.addEventListener("DOMContentLoaded", carregarProdutos);
 
 
 
@@ -344,26 +387,26 @@ function carregarProdutos() {
     div.appendChild(carousel);
 
     // Informações do produto
-const info = document.createElement("div");
-info.className = "produto-info";
+    const info = document.createElement("div");
+    info.className = "produto-info";
 
-const nome = document.createElement("h3");
-nome.textContent = produto.nome;
-info.appendChild(nome);
+    const nome = document.createElement("h3");
+    nome.textContent = produto.nome;
+    info.appendChild(nome);
 
-// Adiciona a descrição do produto logo abaixo do nome
-const descricao = document.createElement("p");
-descricao.className = "produto-descricao";
-descricao.textContent = produto.descricao;
-info.appendChild(descricao);
+    // Adiciona a descrição do produto logo abaixo do nome
+    const descricao = document.createElement("p");
+    descricao.className = "produto-descricao";
+    descricao.textContent = produto.descricao;
+    info.appendChild(descricao);
 
-const preco = document.createElement("p");
-preco.textContent = `R$ ${produto.preco.toFixed(2)}`;
+    const preco = document.createElement("p");
+    preco.textContent = `R$ ${produto.preco.toFixed(2)}`;
 
-const estoque = document.createElement("p");
-estoque.textContent = `Estoque: ${produto.estoque}`;
+    const estoque = document.createElement("p");
+    estoque.textContent = `Estoque: ${produto.estoque}`;
 
-const estrelas = criarEstrelas(produto.id, avaliacoes[produto.id] || 0);
+    const estrelas = criarEstrelas(produto.id, avaliacoes[produto.id] || 0);
 
     // Botão WhatsApp
     const botao = document.createElement("a");
@@ -375,7 +418,7 @@ const estrelas = criarEstrelas(produto.id, avaliacoes[produto.id] || 0);
       botao.style.pointerEvents = "none"; // Impede clique
       botao.style.opacity = "0.6"; // Visualmente mais claro
     } else {
-    
+
       botao.textContent = "Comprar no WhatsApp";
       const mensagem = `Olá, tenho interesse neste produto!\n\nNome: ${produto.nome}\nValor: R$ ${produto.preco.toFixed(2)}`;
       const link = `https://wa.me/5587992437345?text=${encodeURIComponent(mensagem)}`;
@@ -388,7 +431,7 @@ const estrelas = criarEstrelas(produto.id, avaliacoes[produto.id] || 0);
     info.appendChild(estoque); // Adiciona o estoque abaixo do preço
     info.appendChild(estrelas);
     info.appendChild(botao);
-    
+
 
     div.appendChild(info);
     catalogo.appendChild(div);
@@ -399,7 +442,7 @@ function abrirLightbox(produto) {
   // Cria a estrutura do lightbox
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
-  
+
   // Cria a imagem dentro do lightbox
   const lightboxImg = document.createElement('img');
   lightboxImg.src = produto.imagens[currentIndex];
@@ -448,7 +491,7 @@ function filtrarProdutos() {
     carousel.className = "carousel";
     const imageContainer = document.createElement("div");
     imageContainer.className = "carousel-images";
-    
+
     let currentIndex = 0;
     const img = document.createElement("img");
     img.src = produto.imagens[currentIndex];
@@ -536,26 +579,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 let slideIndex = 0;
-  const slides = document.querySelectorAll(".banner-slide");
+const slides = document.querySelectorAll(".banner-slide");
 
-  function mostrarSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? "block" : "none";
-    });
-  }
+function mostrarSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? "block" : "none";
+  });
+}
 
-  function changeSlide(direction) {
-    slideIndex += direction;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-    mostrarSlide(slideIndex);
-  }
-
-  // Inicializa o primeiro slide corretamente
+function changeSlide(direction) {
+  slideIndex += direction;
+  if (slideIndex >= slides.length) slideIndex = 0;
+  if (slideIndex < 0) slideIndex = slides.length - 1;
   mostrarSlide(slideIndex);
+}
 
-  // Opcional: rotação automática a cada 5 segundos
-  setInterval(() => changeSlide(1), 5000);
+// Inicializa o primeiro slide corretamente
+mostrarSlide(slideIndex);
+
+// Opcional: rotação automática a cada 5 segundos
+setInterval(() => changeSlide(1), 5000);
 
 
 // Função de navegação manual
@@ -577,7 +620,7 @@ function atualizarBanner() {
 }
 
 // Mostrar o botão ao rolar a página
-window.onscroll = function() {
+window.onscroll = function () {
   let botao = document.getElementById("btnTopo");
   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
     botao.style.display = "block";
@@ -587,13 +630,13 @@ window.onscroll = function() {
 };
 
 // Função para rolar até o topo
-document.getElementById("btnTopo").onclick = function() {
+document.getElementById("btnTopo").onclick = function () {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 
 // Rolar a página para o topo ao clicar no botão
-document.getElementById("btnTopo").onclick = function() {
+document.getElementById("btnTopo").onclick = function () {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
