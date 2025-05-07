@@ -60,7 +60,7 @@ const produtos = [
     id: 8,
     nome: "Máscara para Cílios Black ALL Day / Vivai",
     preco: 14.00,
-    imagens: ["imagens/1 (7).jpg"],
+    imagens: ["imagens/1 (24).jpg"],
     descricao: "Máscara para Cílios Black ALL Day – Vivai – Volume, definição e longa duração para cílios intensamente pretos o dia todo!",
     estoque: 3 // Produto fora de estoque
   },
