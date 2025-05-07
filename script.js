@@ -189,7 +189,7 @@ const produtos = [
     nome: "Gloss Gold Magic – Febella",
     preco: 13.00,
     imagens: ["imagens/1 (8).jpg"],
-    descricao: "Máscara que alonga e dá volume aos cílios.",
+    descricao: "Realce seus lábios com um acabamento luxuoso e radiante. Com partículas de brilho dourado, o Gold Magic oferece hidratação, volume e um visual glamouroso que transforma qualquer make. Ideal para quem ama se destacar!",
     estoque: 2 // Produto fora de estoque
   },
   {
