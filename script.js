@@ -348,7 +348,7 @@ function carregarProdutos() {
 
       botao.textContent = "Comprar no WhatsApp";
       const mensagem = `Olá, tenho interesse neste produto!\n\nNome: ${produto.nome}\nValor: R$ ${produto.preco.toFixed(2)}`;
-      const link = `https://wa.me/5587992437345?text=${encodeURIComponent(mensagem)}`;
+      const link = `https://wa.me/5587991065384?text=${encodeURIComponent(mensagem)}`;
       botao.href = link;
       botao.target = "_blank";
     }
@@ -475,7 +475,7 @@ function filtrarProdutos() {
     } else {
       botao.textContent = "Comprar no WhatsApp";
       const mensagem = `Olá, tenho interesse neste produto!\n\nNome: ${produto.nome}\nValor: R$ ${produto.preco.toFixed(2)}`;
-      const link = `https://wa.me/5587992437345?text=${encodeURIComponent(mensagem)}`;
+      const link = `https://wa.me/5587991065384?text=${encodeURIComponent(mensagem)}`;
       botao.href = link;
       botao.target = "_blank";
     }
