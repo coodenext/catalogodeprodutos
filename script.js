@@ -197,8 +197,7 @@ const produtos = [
     nome: "Gloss - Febella",
     preco: 19.00,
     imagens: ["imagens/1 (7).jpg"],
-    descricao: "Brilho intenso, lábios irresistíveis!
-Textura leve, hidratação na medida e um acabamento que valoriza qualquer look.",
+    descricao: "Brilho intenso, lábios irresistíveis! Textura leve, hidratação na medida e um acabamento que valoriza qualquer look.",
     estoque: 5 // Produto fora de estoque
   },
 
