@@ -14,7 +14,7 @@ const produtos = [
     preco: 15.00,
     imagens: ["imagens/1 (2).jpg", "imagens/1 (2).jpeg"],
     descricao: "Acabamento aveludado, cobertura leve a média e controle da oleosidade. Ideal para selar a make e deixar a pele impecável o dia todo!",
-    estoque: 4
+    estoque: 1
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const produtos = [
     preco: 24.00,
     imagens: ["imagens/1 (5).jpg"],
     descricao: "On The Glow Blush – Fabella – Blush cremoso com efeito natural e luminoso, perfeito para um toque de cor e viço na pele!",
-    estoque: 4 // Produto fora de estoque
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ const produtos = [
     preco: 14.00,
     imagens: ["imagens/1 (24).jpg"],
     descricao: "Máscara para Cílios Black ALL Day – Vivai – Volume, definição e longa duração para cílios intensamente pretos o dia todo!",
-    estoque: 3 // Produto fora de estoque
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 9,
@@ -86,7 +86,7 @@ const produtos = [
     preco: 22.00,
     imagens: ["imagens/1 (20).jpg"],
     descricao: "Kit 13 Pincéis Profissionais – Conjunto completo para uma maquiagem impecável, com pincéis de alta qualidade para todos os detalhes!",
-    estoque: 2 // Produto fora de estoque
+    estoque: 0 // Produto fora de estoque
   },
   {
     id: 12,
@@ -110,7 +110,7 @@ const produtos = [
     preco: 17.00,
     imagens: ["imagens/1 (17).jpg"],
     descricao: "Bruma Matte – Phállebeaut – Fixação prolongada e acabamento matte, controlando a oleosidade e deixando a maquiagem intacta o dia todo!",
-    estoque: 3 // Produto fora de estoque
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 15,
@@ -126,7 +126,7 @@ const produtos = [
     preco: 14.00,
     imagens: ["imagens/1 (31).jpeg"],
     descricao: "Máscara que alonga e dá volume aos cílios.",
-    estoque: 2 // Produto fora de estoque
+    estoque: 1 // Produto fora de estoque
   },
   {
     id: 17,
@@ -150,7 +150,7 @@ const produtos = [
     preco: 17.00,
     imagens: ["imagens/1 (13).jpg"],
     descricao: "Espuma Facial Morango – Nelô – Limpeza suave com um toque doce de morango, removendo impurezas e deixando a pele macia e refrescante!",
-    estoque: 2 // Produto fora de estoque
+    estoque: 1 // Produto fora de estoque
   },
   {
     id: 20,
@@ -190,7 +190,7 @@ const produtos = [
     preco: 13.00,
     imagens: ["imagens/1 (8).jpg"],
     descricao: "Realce seus lábios com um acabamento luxuoso e radiante. Com partículas de brilho dourado, o Gold Magic oferece hidratação, volume e um visual glamouroso que transforma qualquer make. Ideal para quem ama se destacar!",
-    estoque: 2 // Produto fora de estoque
+    estoque: 0 // Produto fora de estoque
   },
   {
     id: 25,
@@ -198,7 +198,7 @@ const produtos = [
     preco: 19.00,
     imagens: ["imagens/1 (7).jpg"],
     descricao: "Brilho intenso, lábios irresistíveis! Textura leve, hidratação na medida e um acabamento que valoriza qualquer look.",
-    estoque: 5 // Produto fora de estoque
+    estoque: 1 // Produto fora de estoque
   },
 
 ];
