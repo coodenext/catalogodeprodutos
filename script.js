@@ -3,7 +3,7 @@ const produtos = [
   {
     id: 1,
     nome: "KIT Primer Facial – Phállebeaut / Esponja Chanfrada / 4 Angels Corretivo Líquido",
-    preco: 41.99,
+    preco: 41.90,
     imagens: ["imagens/2 (1).jpg"], // Múltiplas imagens
     estoque: 4 // Quantidade em estoque
   },
