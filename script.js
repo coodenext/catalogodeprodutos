@@ -2,6 +2,27 @@
 const produtos = [
   {
     id: 1,
+    nome: "KIT Primer Facial – Phállebeaut / Esponja Chanfrada / 4 Angels Corretivo Líquido",
+    preco: 41.99,
+    imagens: ["imagens/2 (1).jpg"], // Múltiplas imagens
+    estoque: 4 // Quantidade em estoque
+  },
+  {
+    id: 1,
+    nome: "KIT On The Glow Blush – Fabella / Sérum Vitamina C – Phállebeauty / Iluminador Líquido - Febella",
+    preco: 59.90,
+    imagens: ["imagens/2 (2).jpg"], // Múltiplas imagens
+    estoque: 1 // Quantidade em estoque
+  },
+  {
+    id: 1,
+    nome: "KIT Paleta de Blush Febella – 3 Tonalidades / Gel Creme Hidratante Facial – Phállebeauty / Gloss - Febella",
+    preco: 56.90,
+    imagens: ["imagens/2 (3).jpg"], // Múltiplas imagens
+    estoque: 1 // Quantidade em estoque
+  },
+  {
+    id: 1,
     nome: "4 Angels Corretivo Líquido",
     preco: 15.00,
     imagens: ["imagens/1 (1).jpg", "imagens/1 (1)b.jpeg"], // Múltiplas imagens
