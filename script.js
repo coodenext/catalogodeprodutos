@@ -43,7 +43,7 @@ const produtos = [
     preco: 11.00,
     imagens: ["imagens/1 (3).jpg"],
     descricao: "Pó Banana Bem Me Quero – Acabamento aveludado, controla a oleosidade e sela a maquiagem com leveza e perfeição!",
-    estoque: 4 // Produto fora de estoque
+    estoque: 3 // Produto fora de estoque
   },
   {
     id: 4,
