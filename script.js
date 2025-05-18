@@ -187,7 +187,7 @@ const produtos = [
     preco: 28.00,
     imagens: ["imagens/1 (11).jpg"],
     descricao: "Base Líquida Lua e Neve – Cobertura média e acabamento impecável, proporcionando uma pele uniforme e radiante o dia todo!",
-    estoque: 1 // Produto fora de estoque
+    estoque: 0 // Produto fora de estoque
   },
   {
     id: 22,
