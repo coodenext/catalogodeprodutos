@@ -5,7 +5,7 @@ const produtos = [
     nome: "KIT Primer Facial – Phállebeaut / Esponja Chanfrada / 4 Angels Corretivo Líquido",
     preco: 41.90,
     imagens: ["imagens/2 (1).jpg"], // Múltiplas imagens
-    estoque: 4 // Quantidade em estoque
+    estoque: 3 // Quantidade em estoque
   },
   {
     id: 1,
@@ -123,7 +123,7 @@ const produtos = [
     preco: 22.00,
     imagens: ["imagens/1 (18).jpg"],
     descricao: "Primer Facial – Phállebeaut – Preparação perfeita para a pele, controla a oleosidade e aumenta a durabilidade da maquiagem!",
-    estoque: 4 // Produto fora de estoque
+    estoque: 3 // Produto fora de estoque
   },
   {
     id: 14,
@@ -163,7 +163,7 @@ const produtos = [
     preco: 20.00,
     imagens: ["imagens/1 (14).jpg"],
     descricao: "Gel Creme Hidratante Facial – Phállebeauty – Hidratação intensa e rápida absorção, deixando a pele macia, fresca e revitalizada!",
-    estoque: 2 // Produto fora de estoque
+    estoque: 1 // Produto fora de estoque
   },
   {
     id: 19,
@@ -179,7 +179,7 @@ const produtos = [
     preco: 15.00,
     imagens: ["imagens/1 (12).jpg"],
     descricao: "Gel Incolor Fix & Antifrizz – Mia Make – Controle de frizz e fixação sem pesar, deixando o cabelo suave, disciplinado e com brilho natural",
-    estoque: 3 // Produto fora de estoque
+    estoque: 2 // Produto fora de estoque
   },
   {
     id: 21,
